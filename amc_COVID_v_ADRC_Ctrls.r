@@ -34,7 +34,7 @@ mSetFun <- preprocessFunnorm(rgSet,bgCorr=T,dyeCorr=T)
 
 # Sex prediction
 pSexFun <- getSex(mSetFun)
-pSetFun <- as.data.frame(pSexFun)
+pSexFun <- as.data.frame(pSexFun)
 cbind(pSexFun$predictedSex,as.character(targets$Gender))
 # no samples discarded
 # using samplesheet which had failed sex sampels previously removed
@@ -100,7 +100,7 @@ save(mVals_combat,bVals_combat,file="mVals_bVals_Combat_CovidADCtrls.rdata")
 
 # Surrogate variable analysis
 n.sv <- num.sv(mVals_combat,mod)
-n.sv #19sv #28sv if blood cells added # 28sv with combat adjustment # 29 with combat adjust, blood counts, but no age
+n.sv
 svobj <- sva(mVals_combat,mod,mod0,n.sv=n.sv)
 modSv <- cbind(mod,svobj$sv)
 
