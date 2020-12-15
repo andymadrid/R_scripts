@@ -3,9 +3,9 @@
 ### chr sizes from UCSC hg19, only chr1:22
 rm(list=ls())
 library(BioCircos)
-chrSizes <- read.table("../chrSizes.txt",header=F)
+chrSizes <- read.table("chrSizes.txt",header=F)
 x <- list("1"=249250621,"2"=243199373,"3"=198022430,"4"=191154276,"5"=180915260,"6"=171115067,"7"=159138663,"8"=146364022,"9"=135534747,"10"=135534747,"11"=135006516,"12"=133851895,"13"=115169878,"14"=107349540,"15"=102531392,"16"=90354753,"17"=81195210,"18"=78077248,"19"=59128983,"20"=63025520,"21"=48129895,"22"=51304566)
-pos <- read.table("../forCircos.txt",header=F)
+pos <- read.table("forCircos.txt",header=F)
 hyper <- pos[1:101,]
 hypo <- pos[102:254,]
 hyper_chr <- hyper[,1]
