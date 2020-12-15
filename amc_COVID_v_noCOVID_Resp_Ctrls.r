@@ -55,7 +55,7 @@ dev.off()
 
 ## Sex prediction
 pSexFun <- getSex(mSetFun)
-pSetFun <- as.data.frame(pSexFun)
+pSexFun <- as.data.frame(pSexFun)
 cbind(pSexFun$predictedSex,as.character(targets$Gender))
 ### Samples 12, 73, 123 failed sex prediction, thrown out
 ### Sample 50 is missing sex, predicted male, thrown out
@@ -146,7 +146,7 @@ mod0 <- model.matrix(~ sex + age + gran + mono + nk + bcell + cd8 + cd4)
 
 # Surrogate variable analysis
 n.sv <- num.sv(mVals_Fun,mod)
-n.sv #25sv
+n.sv
 svobj <- sva(mVals_Fun,mod,mod0,n.sv=n.sv)
 modSv <- cbind(mod,svobj$sv)
 
