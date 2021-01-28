@@ -1,0 +1,8 @@
+library(sva)
+myData <- read.table("myData.txt",header=T)
+myData <- as.matrix(myData)
+mod <- model.matrix(~ covar1 + covar2 + covar3)
+mod0 <- model.matrix(~ covar2 + covar3)
+n.sv <- num.sv(myData,mod)
+svobj <- sva(myData,mod,mod0,n.sv=n.sv)
+modSv <- cbind(mod,svobj$sv)
